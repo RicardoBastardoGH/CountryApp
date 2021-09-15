@@ -1,0 +1,67 @@
+
+<div *ngIf="!country; else divCountry" 
+    class="alert alert-info">
+    Espere por favor...
+</div>
+
+<ng-template #divCountry>
+    <div class="col">
+        <div class="row">
+            <h1>Pais: <small>{{ country.name }}</small></h1>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="row">
+    
+            <div class="col-4">
+                <h4>Bandera</h4>
+                <img [src]="country.flag" alt="" class="img-thumbnail">
+            </div>
+
+            <div class="col">
+                <h4>Informacion</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Population: {{ country.population | number }}
+                    </li>
+                    <li class="list-group-item">
+                        Codigo numerico: {{ country.numericCode }}
+                    </li>
+                    <li class="list-group-item">
+                        Codigo alpha3: {{ country.alpha3Code }}
+                    </li>
+                </ul>
+            </div>
+    
+    
+        </div>
+    </div>
+
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary me-1">{{ country.translations.de }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations.es }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations.fr }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations.ja }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations.it }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations.br }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations.pt }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations.nl }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations.hr }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations.fa }}</span>
+
+
+        </div>
+    </div>
+
+    <!-- <pre class="mt-5">
+        {{ country | json }}
+    </pre> -->
+
+</ng-template>
+
+
+
+
